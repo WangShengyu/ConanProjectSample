@@ -1,0 +1,1 @@
+A sample of a project whose package is managed by conan.

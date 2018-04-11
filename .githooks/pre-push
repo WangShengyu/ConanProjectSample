@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# Run unit tests
+echo "pre-push: Run unit tests..."
+if .\\run_tests_x86_64_release.bat
+then
+  exit 0
+else
+  exit 1
+fi
