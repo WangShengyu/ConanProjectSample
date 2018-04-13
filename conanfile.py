@@ -4,7 +4,6 @@ from os.path import isfile, join
 import os
 
 class ConanProjectSampleConan(ConanFile):
-    short_paths = True
     settings = "os", "compiler", "build_type", "arch"
     generators = "cmake", "gcc", "txt"
     options = {"develop": [True, False]}
