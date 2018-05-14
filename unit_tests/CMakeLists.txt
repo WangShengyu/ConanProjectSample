@@ -20,7 +20,6 @@ add_executable(${PROJECT_NAME} ${project_src_files} ${project_hdr_files})
 
 set(include_dir
   ${PROJECT_SOURCE_DIR}
-  ${PROJECT_SOURCE_DIR}/MathUtilsTests
 )
 target_include_directories(${PROJECT_NAME} PRIVATE ${include_dir})
 
