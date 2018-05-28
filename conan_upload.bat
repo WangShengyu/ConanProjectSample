@@ -7,7 +7,7 @@ set /p PACKAGE_NAME=<package_name.txt
 
 mkdir export
 cd export
-conan install .. -s build_type=Release -s arch=x86_64
+conan install .. -s arch=x86_64 -s build_type=Release -s os=Windows -s compiler="Visual Studio" -s compiler.version=14 -s compiler.runtime=MD
 conan build ..
 cd ..
 
