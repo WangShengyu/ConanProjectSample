@@ -18,6 +18,7 @@ class ConanProjectSampleConan(ConanFile):
 
     def imports(self):
         self.copy("*.dll", dst="bin", src="bin")
+        self.copy("*.pdb", dst ="bin", src = "bin")
 
     def build(self):
         cmake = CMake(self)
@@ -25,12 +26,10 @@ class ConanProjectSampleConan(ConanFile):
         cmake.build()
 
     def package (self):
-        buildType = str(self.settings.build_type)
-        arch = str(self.settings.arch)
-        buildPath = os.path.join(arch, buildType)
         self.copy("*.h", dst ="include", src = "public")
-        self.copy("*.lib", dst ="lib", src = buildPath + "/lib")
-        self.copy("*.dll", dst ="bin", src = buildPath + "/bin")
+        self.copy("*.lib", dst ="lib", src = "lib")
+        self.copy("*.dll", dst ="bin", src = "bin")
+        self.copy("*.pdb", dst ="bin", src = "bin")
 
     def package_info(self):
         libpath = os.path.join(self.package_folder, "lib")
