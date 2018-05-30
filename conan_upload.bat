@@ -11,13 +11,15 @@ conan install .. -s arch=x86_64 -s build_type=Release -s os=Windows -s compiler=
 conan build ..
 cd ..
 
-conan export-pkg . %PACKAGE_NAME% -f --build-folder=build/ --source-folder=src/
+conan export-pkg . %PACKAGE_NAME% -f --build-folder=export/ --source-folder=src/
 @if errorlevel 1 goto error
 conan upload %PACKAGE_NAME% -r=ceye --all
 @if errorlevel 1 goto error
 goto success
 :error
+rmdir /s /q export
 pause
 exit /B 1
 :success
+rmdir /s /q export
 
