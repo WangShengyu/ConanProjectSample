@@ -3,7 +3,7 @@ from os import listdir
 from os.path import isfile, join
 import os
 
-class ConanProjectSampleConan(ConanFile):
+class ProjectConan(ConanFile):
     settings = "os", "compiler", "build_type", "arch"
     generators = "cmake", "gcc", "txt"
     options = {"develop": [True, False]}
